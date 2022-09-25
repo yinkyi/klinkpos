@@ -1,0 +1,61 @@
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #151D72;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593); */
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593); */
+  }
+  .checked {
+    color: orange;
+    padding-right: 0.5rem;
+  }
+  @media (min-width: 768px) {
+    .gradient-form {
+      height: 100vh !important;
+    }
+  }
+  @media (min-width: 769px) {
+    .gradient-custom-2 {
+      border-top-right-radius: .3rem;
+      border-bottom-right-radius: .3rem;
+    }
+  }
+  .para-login{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+  }
+  .avatar-text{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin: 0.2rem;
+  }
+  .supporting-text{
+    font-weight: 500;
+    color:#939DD4;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .footer-right{
+    text-align: right;
+  }
+  .footer{
+    color: #939DD4;
+    justify-content: space-between;
+    padding:32px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: top;
+  }
+  .middle-body {
+    margin-top:5rem !important;
+    margin-bottom:5rem !important
+  }
+  

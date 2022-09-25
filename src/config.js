@@ -1,0 +1,1 @@
+export const api_endpoint = "http://klink-api.my-cmss.com";

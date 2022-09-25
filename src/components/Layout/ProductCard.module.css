@@ -1,0 +1,21 @@
+.cardImage{
+    width: 200px;
+    height: 200px;
+    padding:12px
+}
+.cardBody{
+    padding-top:0 !important
+}
+.bodyText{
+    padding-top: 0px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    color:000000
+}
+.price{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    color:#2E3EA1
+}
