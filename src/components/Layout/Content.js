@@ -1,36 +1,40 @@
 import React,{useEffect} from 'react';
 import { Row,Col,InputGroup,FormControl,Button, Container } from 'react-bootstrap';
 import useHttp from "../../hooks/use-http";
-import { getCategories } from "../../lib/api";
-import ProductList from './ProductList';
-// import CategoryList from '../Category/CategoryList';
+import { getCategories} from "../../lib/api";
+import CategoryList from '../Category/CategoryList';
 import {useSelector } from "react-redux";
+import ProductList from './ProductList';
 
-
-const MainLayout = (props) => {  
+const Content = () => {  
   const token = useSelector(state=>state.auth.token);
   const {sendRequest,data:categoryData,status} = useHttp(getCategories);
+  
     useEffect(()=>{
         sendRequest({
           apiToken:token
         });
     },[])
+ 
     let category_context;
+
+
     if(status === "pending"){
       category_context = "Loading Categories..."
     }    
     else if(status==="completed" && (categoryData && categoryData.length>0)){    
       // dispatch(packSliceActions.setClassPack(classPackData));     
-      category_context = "hey";
-      // category_context = <CategoryList categoryData={categoryData}></CategoryList>;
-  
-                          console.log(category_context);    
+      //category_context = "hey";
+       category_context = <CategoryList categoryData={categoryData}></CategoryList>;
+     
     }else if(status==="completed" && (!categoryData && categoryData.length === 0 )) {
       category_context = <p>No category!!</p>;
     }
+
+
   return (
-    <Container id="content" className="p-4 p-md-5 pt-5">
-      <Row>
+    <Container id="content" className="pt-5">
+      <Row className="pr-2">
         <Col>
           <img src="../../kLink-bule.png" style={{width: '150px',height:'35px'}} alt="logo" />
         </Col>
@@ -43,7 +47,7 @@ const MainLayout = (props) => {
       </Row>    
       <Row>
         <Col>     
-                {category_context}{status}
+                {category_context}
         </Col>
       </Row>
       <Row>
@@ -53,4 +57,4 @@ const MainLayout = (props) => {
   );
 };
 
-export default React.memo(MainLayout);
+export default React.memo(Content);

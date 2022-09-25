@@ -27,7 +27,7 @@ const Layout = (props) => {
         ? 
       <LoginCard onSuccessLogin={successLogin}/>
         :
-      <HomePage/>}     
+      <HomePage />}     
     </Fragment>
   );
 };

@@ -106,3 +106,30 @@ export async function getCategories(requestData) {
 
   return categories;
 }
+export async function getProducts(requestData) {
+  const response = await fetch(`${DOMAIN}/api/auth/products`, {
+    method: 'POST',
+    body: JSON.stringify({
+              "category_id":requestData.category_id??requestData.category_id,
+              "product_name":requestData.product_name??requestData.product_name,
+              "rowsPerPage":20
+          }),
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization':'Bearer '+requestData.apiToken
+    },
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || 'Could not get category.');
+  }
+  let products=[];
+  if(data.errorCode === 0){
+    products = data.data.data;
+  }
+  console.log(products);
+  return products;
+}

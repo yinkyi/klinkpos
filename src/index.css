@@ -8197,6 +8197,8 @@ h1, h2, h3, h4, h5,
   width: 100%; }
 
 #sidebar {
+  min-width: 400px;
+  max-width: 400px;
   color: #fff;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -8207,7 +8209,7 @@ h1, h2, h3, h4, h5,
   #sidebar .h6 {
     color: #fff; }
   #sidebar.active {
-    margin-left: -270px; }
+    margin-left: -400px; }
   #sidebar ul.components {
     padding: 0; }
   #sidebar ul li {
