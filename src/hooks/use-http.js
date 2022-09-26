@@ -1,4 +1,6 @@
 import { useReducer, useCallback } from 'react';
+import {authActions} from '../store/auth';
+import { useDispatch} from 'react-redux';
 
 function httpReducer(state, action) {
   if (action.type === 'SEND') {
@@ -21,7 +23,7 @@ function httpReducer(state, action) {
     return {
       data: null,
       error: action.errorMessage,
-      status: 'completed',
+      status: 'error',
     };
   }
 
@@ -29,6 +31,7 @@ function httpReducer(state, action) {
 }
 
 function useHttp(requestFunction, startWithPending = false) {
+  const dispatch1 = useDispatch();
   const [httpState, dispatch] = useReducer(httpReducer, {
     status: startWithPending ? 'pending' : null,
     data: null,
@@ -41,7 +44,9 @@ function useHttp(requestFunction, startWithPending = false) {
       try {
         const responseData = await requestFunction(requestData);
         dispatch({ type: 'SUCCESS', responseData });
-      } catch (error) {
+      } catch (error) {        
+        if(error.message === "Unauthenticated.")
+          dispatch1(authActions.logout());
         dispatch({
           type: 'ERROR',
           errorMessage: error.message || 'Something went wrong!',

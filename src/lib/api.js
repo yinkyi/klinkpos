@@ -95,7 +95,7 @@ export async function getCategories(requestData) {
   });
 
   const data = await response.json();
-
+  
   if (!response.ok) {
     throw new Error(data.message || 'Could not get category.');
   }
@@ -123,7 +123,7 @@ export async function getProducts(requestData) {
   });
 
   const data = await response.json();
-
+  
   if (!response.ok) {
     throw new Error(data.message || 'Could not get product.');
   }

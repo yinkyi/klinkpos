@@ -95,7 +95,7 @@ const ProductList = () =>{
                loadMore={fetchItems}
                hasMore={hasMoreItems}
                loader={loader}
-               className='row'
+               className='row mr-2'
             >
               {
                     items.map((p)=>(
