@@ -1,16 +1,20 @@
 import React from 'react';
-import { Button, Row, Col,Container } from 'react-bootstrap';
-import classes from "./SideBar.module.css"
-const SideBar = (props) => {  
-    console.log("Sidebar");
+import { Button, Row, Col, Container} from 'react-bootstrap';
+import Cart from './Cart';
+import classes from "./SideBar.module.css";
+import { useSelector } from 'react-redux';
+
+const SideBar = (props) => { 
+  const totalPrice =useSelector(state=>state.totalPrice);  
   return (
     <nav id="sidebar">
         <Container fluid>
-            <Row className="p-4 pt-5">            
+            <Row className="p-2 pt-5">            
                     <Col>
                         <h5 className={classes.title}>Order details</h5>                        
                     </Col>
             </Row>
+            <Cart />
             <Row>
                 <Col className='bgPrimary25 w-100'>
                 <form action="#" className="subscribe-form textGray600">
@@ -36,7 +40,7 @@ const SideBar = (props) => {
                                 Total
                             </Col>
                             <Col className='text-right'>
-                                ks 9,450
+                                ks {totalPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}
                             </Col>
                         </Row>
                         <Row  className="text-left pt-1 pb-1">

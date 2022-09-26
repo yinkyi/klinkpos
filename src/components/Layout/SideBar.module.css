@@ -9,3 +9,27 @@
     font-weight: 700;
     line-height: 32px;
 }
+.cartText{
+  font-size: 16px;
+  line-height: 19px;
+  color:#000000;
+  font-weight: 500;
+}
+.cartPrice{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  color:#2E3EA1
+}
+.cartCurrency{
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 30px;
+  color:#2E3EA1
+}
+.iconText{
+  color:#667085;
+  line-height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}

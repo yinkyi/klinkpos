@@ -130,6 +130,5 @@ export async function getProducts(requestData) {
   if(data.errorCode === 0){
     products = data.data.data;
   }
-  console.log(products);
   return products;
 }

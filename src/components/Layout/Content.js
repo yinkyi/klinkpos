@@ -4,7 +4,7 @@ import useHttp from "../../hooks/use-http";
 import { getCategories} from "../../lib/api";
 import CategoryList from '../Category/CategoryList';
 import {useSelector } from "react-redux";
-import ProductList from './ProductList';
+import ProductList from '../Product/ProductList';
 
 const Content = () => {  
   const token = useSelector(state=>state.auth.token);
@@ -45,7 +45,7 @@ const Content = () => {
           </InputGroup>
         </Col>
       </Row>    
-      <Row>
+      <Row style={{'maxWidth':'1000px'}}>
         <Col>     
                 {category_context}
         </Col>
