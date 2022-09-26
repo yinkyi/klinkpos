@@ -8,9 +8,13 @@ import { cartActions } from '../../store/cart-slice';
 const Cart = () => {
   const dispatch = useDispatch();
 
-  const items =useSelector(state=>state.cart.items);  
-  const reduceItemHandler=(id)=>{
+  const items =useSelector(state=>state.cart.items);
+  
+  const removeItemHandler=(id)=>{
     dispatch(cartActions.removeItemCart(id));
+  };    
+  const reduceItemHandler=(id)=>{
+    dispatch(cartActions.reduceItemCart(id));
   };
   const addItemHandler=(item)=>{
     dispatch(cartActions.addItemToCart({
@@ -53,7 +57,7 @@ const Cart = () => {
                                             
                         </Col>
                         <Col xs lg="1">                  
-                            <span className={classes.crossText}>X</span>
+                            <span className={classes.iconText} onClick={removeItemHandler.bind(null,item.id)}>X</span>
                         </Col>
                 </Row>
                 ))
