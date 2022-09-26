@@ -6,6 +6,9 @@ import {getProducts} from "../../lib/api";
 
 const ProductList = () =>{
     const token = useSelector(state=>state.auth.token);
+    const search_category_id = useSelector(state=>state.search.category_id);
+    const search_product_name = useSelector(state=>state.search.product_name);
+
     const {sendRequest:sendRequestProduct,data:productData,status:productStatus} = useHttp(getProducts);
     let product_context;
 
@@ -23,9 +26,11 @@ const ProductList = () =>{
 
     useEffect(()=>{
         sendRequestProduct({
-          apiToken:token
+          apiToken:token,
+          category_id:search_category_id,
+          product_name:search_product_name
         });
-    },[])
+    },[search_category_id,search_product_name])
 
     return(
         <React.Fragment>

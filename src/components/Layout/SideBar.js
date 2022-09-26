@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
 
 const SideBar = (props) => { 
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const totalPrice =useSelector(state=>state.cart.totalPrice);
   const tax = (totalPrice / 100) * 5; 
   const grandTotal = totalPrice + tax;
