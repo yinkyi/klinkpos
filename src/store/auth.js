@@ -54,7 +54,6 @@ const authSlice = createSlice({
             localStorage.removeItem("token");
             localStorage.removeItem("expirationTime");
             localStorage.removeItem("expiredIn");
-            localStorage.removeItem("selected_pack");
             clearTimeout(state.logoutTimer);
             state.logoutTimer=null;
             

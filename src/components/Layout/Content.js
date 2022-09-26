@@ -28,8 +28,6 @@ const Content = () => {
     category_context = "Loading Categories..."
   }    
   else if(status==="completed" && (categoryData && categoryData !== null && categoryData.length>0)){    
-    // dispatch(packSliceActions.setClassPack(classPackData));     
-    //category_context = "hey";
       category_context = <CategoryList categoryData={categoryData}></CategoryList>;
     
   }else if(status==="completed" && (categoryData === null && categoryData.length === 0 )) {

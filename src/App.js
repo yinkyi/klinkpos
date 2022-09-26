@@ -33,16 +33,7 @@ function App() {
     <Switch>
         <Route path='/' exact>
             <HomePage/>
-        </Route>      
-        {/* <Route path='/class-packs' exact>
-            <ClassPackPage />
-        </Route>
-        <Route path='/about-us'>
-            <AboutUsPage />
-        </Route>
-        <Route path='/checkout'>
-          <CheckoutPage/>
-        </Route> */}
+        </Route>             
         <Route path='*'>
           <Redirect to="/"/>
         </Route>
