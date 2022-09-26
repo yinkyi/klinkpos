@@ -24,16 +24,15 @@ const Content = () => {
 
   let category_context;
 
-
   if(status === "pending"){
     category_context = "Loading Categories..."
   }    
-  else if(status==="completed" && (categoryData && categoryData.length>0)){    
+  else if(status==="completed" && (categoryData && categoryData !== null && categoryData.length>0)){    
     // dispatch(packSliceActions.setClassPack(classPackData));     
     //category_context = "hey";
       category_context = <CategoryList categoryData={categoryData}></CategoryList>;
     
-  }else if(status==="completed" && (!categoryData && categoryData.length === 0 )) {
+  }else if(status==="completed" && (categoryData === null && categoryData.length === 0 )) {
     category_context = <p>No category!!</p>;
   }
 

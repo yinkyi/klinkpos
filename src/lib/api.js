@@ -107,12 +107,13 @@ export async function getCategories(requestData) {
   return categories;
 }
 export async function getProducts(requestData) {
-  const response = await fetch(`${DOMAIN}/api/auth/products`, {
+  const url = requestData.url?requestData.url:`${DOMAIN}/api/auth/products`;
+  const response = await fetch(url, {
     method: 'POST',
     body: JSON.stringify({
               "category_id":requestData.category_id??requestData.category_id,
               "product_name":requestData.product_name??requestData.product_name,
-              "rowsPerPage":20
+              "rowsPerPage":8
           }),
     headers: {
       'Content-Type': 'application/json',
@@ -124,11 +125,12 @@ export async function getProducts(requestData) {
   const data = await response.json();
 
   if (!response.ok) {
-    throw new Error(data.message || 'Could not get category.');
+    throw new Error(data.message || 'Could not get product.');
   }
   let products=[];
   if(data.errorCode === 0){
-    products = data.data.data;
+    products["data"] = data.data.data;
+    products["next_page_url"] = data.data.next_page_url;
   }
   return products;
 }
