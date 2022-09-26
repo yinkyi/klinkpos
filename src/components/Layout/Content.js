@@ -55,9 +55,9 @@ const Content = () => {
                 {category_context}
         </Col>
       </Row>
-      <Row>
+      
             <ProductList />
-      </Row>
+      
     </Container>
   );
 };

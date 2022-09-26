@@ -4,3 +4,6 @@
     font-size:14px !important;
     line-height: 20px !important;
 }
+.badges{
+    cursor: pointer;
+}

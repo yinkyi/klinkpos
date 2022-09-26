@@ -43,7 +43,7 @@ const Cart = () => {
                                         <Button className={classes.iconText}   onClick={reduceItemHandler.bind(null,item.id)} variant="outline-secondary" id="button-addon1">
                                         -
                                         </Button>
-                                        <Form.Control aria-label="Amount (to the nearest dollar)" value={item.quantity}/>
+                                        <Form.Control aria-label="Amount (to the nearest dollar)" value={item.quantity} readOnly/>
                                         <Button className={classes.iconText} onClick={addItemHandler.bind(null,item)} variant="outline-secondary" id="button-addon1">
                                         +
                                         </Button>
@@ -64,7 +64,7 @@ const Cart = () => {
             )
             :
             <Row className="p-2 pt-5 text-black text-center">   
-                <Col className={`m-auto ${classes.title}`}>Empty Cart</Col>
+                <Col className={`m-auto ${classes.iconText}`}>Empty Cart</Col>
             </Row>
             
         }
